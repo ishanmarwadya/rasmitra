@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rasmitra | Every Season, a Rasmitra</title>
+<meta name="description" content="Rasmitra sharbat, Winter Sips and Chatkara. Explore the range, play warm wish experiences and create your own for someone you love.">
+<meta name="theme-color" content="#FFF8EE">
+<link rel="icon" href="assets/logo.webp">
+<meta property="og:title" content="Rasmitra: Every Season, a Rasmitra">
+<meta property="og:description" content="Send someone a warm wish they can play, and a cup of Winter Sips they can drink.">
+<meta property="og:image" content="assets/hero_home.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,500..700&family=Mulish:wght@400;600;700;800&family=Caveat:wght@500;700&display=swap">
+<style>
+/* Light, warm brand system: ivory paper, jamun ink, saffron accent, tulsi for positives.
+   Layout: sticky header, three hash-routed pages (Home, Explore, Creators) plus full-screen play view. */
+:root{
+  --paper:#FFF8EE; --paper-2:#FCEFDD; --card:#FFFFFF; --line:#EAD9C4; --line-2:#DCC4A7;
+  --ink:#2B1220; --ink-2:#5A3A48; --muted:#7D6470;
+  --jamun:#522438; --jamun-2:#6E3350; --saffron:#E7A32B; --saffron-d:#B9770F; --tulsi:#2F7D4A; --chilli:#C8392E;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Mulish", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --hand:"Caveat", "Segoe Print", "Comic Sans MS", cursive;
+  --r:16px; --shadow:0 1px 2px rgba(43,18,32,.06), 0 8px 24px rgba(43,18,32,.08);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--jamun)}
+button{font:inherit;cursor:pointer;color:inherit}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.08;letter-spacing:-.01em;text-wrap:balance;color:var(--ink)}
+h1{font-weight:800}
+h2{font-size:clamp(28px,4vw,44px);font-weight:750}
+h3{font-size:21px;font-weight:700}
+p{margin:0}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron-d);font-weight:800}
+.lead{color:var(--ink-2);font-size:18px;max-width:60ch}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;font-weight:800;font-size:15px;background:var(--jamun);color:#fff;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s;white-space:nowrap}
+.btn:hover{background:var(--jamun-2);transform:translateY(-1px)}
+.btn.saffron{background:var(--saffron);color:var(--ink)}
+.btn.saffron:hover{background:#F2B444}
+.btn.ghost{background:transparent;color:var(--jamun);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--jamun)}
+.btn.sm{padding:8px 14px;font-size:13.5px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.chip{border:1.5px solid var(--line-2);background:var(--card);border-radius:999px;padding:8px 15px;font-weight:700;font-size:14px;color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--jamun);border-color:var(--jamun);color:#fff}
+.tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 9px;background:var(--paper-2);color:var(--jamun)}
+.tag.green{background:#E3F1E6;color:var(--tulsi)}
+.tag.saffron{background:#FDECC8;color:var(--saffron-d)}
+
+/* header */
+.top{position:sticky;top:0;z-index:40;background:rgba(255,248,238,.92);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:66px}
+.logo img{height:34px;width:auto}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{text-decoration:none;color:var(--ink-2);font-weight:800;font-size:14.5px;padding:9px 14px;border-radius:999px}
+.nav a:hover{background:var(--paper-2)}
+.nav a[aria-current="page"]{background:var(--jamun);color:#fff}
+.top .cta{margin-left:6px}
+@media (max-width:760px){
+  .top .cta{display:none}
+  .top{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--paper)}
+  .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .pcard{padding:10px}
+  .pcard .img{height:130px}
+  .pcard .img img,.pcard .img svg{max-height:122px}
+  .pcard .meta{flex-wrap:wrap;gap:4px;font-size:12.5px}
+  .pcard h4{font-size:15.5px}
+  .pcard .price{font-size:17px}
+  .nav{position:fixed;left:0;right:0;bottom:0;margin:0;justify-content:space-around;background:rgba(255,248,238,.97);border-top:1px solid var(--line);padding:8px max(10px,env(safe-area-inset-left,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-right,0px));z-index:45}
+  .nav a{flex:1;text-align:center;font-size:13.5px}
+  body{padding-bottom:70px}
+}
+
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.sec-head.row{flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+/* ===== HOME ===== */
+.hero{display:grid;grid-template-columns:.9fr 1.2fr;gap:40px;align-items:center;padding-block:48px 32px}
+.hero h1{font-size:clamp(42px,5.4vw,70px)}
+.hero h1 em{color:var(--saffron-d);font-style:italic;font-weight:600}
+.hero .lead{margin-top:18px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero .shelf{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9}
+.hero .shelf img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero .facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:var(--ink-2);font-size:14px}
+.hero .facts b{display:block;font-family:var(--display);font-size:22px;color:var(--ink)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-block:28px 12px}.hero .shelf{order:-1}}
+
+.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.brand{border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px;min-height:250px;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--card);text-align:left}
+.brand:hover{box-shadow:var(--shadow)}
+.brand .bl{height:44px;display:flex;align-items:center}
+.brand .bl img{height:100%;width:auto}
+.brand .when{font-weight:800;font-size:13px}
+.brand p{color:var(--ink-2);font-size:15px}
+.brand .packs{display:flex;align-items:flex-end;gap:6px;margin-top:auto;height:96px}
+.brand .packs img{height:100%;width:auto;object-fit:contain}
+.brand.ws{background:linear-gradient(160deg,#F7ECF1,#fff 60%)}
+.brand.ck{background:linear-gradient(160deg,#FFF1CF,#fff 60%)}
+.brand.rs{background:linear-gradient(160deg,#FCE6E3,#fff 60%)}
+@media (max-width:900px){.brands{grid-template-columns:1fr}}
+
+.year{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;overflow-x:auto}
+.year table{border-collapse:separate;border-spacing:4px;width:100%;min-width:640px;font-size:13px}
+.year th{font-weight:800;color:var(--muted);text-align:center;font-size:12px}
+.year th.rowh{text-align:left;color:var(--ink);font-size:14px;white-space:nowrap;padding-right:8px}
+.year td{height:30px;border-radius:7px;background:var(--paper-2)}
+.year td.hi{background:var(--c)}
+.year td.mid{background:color-mix(in srgb,var(--c) 45%,#fff)}
+.year .note{margin-top:12px;font-size:14px;color:var(--ink-2)}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px;text-align:left;transition:box-shadow .15s,transform .15s}
+.pcard:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.pcard .img{height:170px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 70%,var(--paper-2),transparent 70%);border-radius:12px}
+.pcard .img img,.pcard .img svg{max-height:160px;width:auto;object-fit:contain}
+.pcard h4{font-size:17px}
+.pcard .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.pcard .price{font-family:var(--display);font-size:20px;color:var(--ink);font-weight:700}
+
+.gift{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:var(--jamun);color:#fff;border-radius:28px;padding:36px;position:relative;overflow:hidden}
+.gift h2,.gift h3{color:#fff}
+.gift .lead{color:#F1DDE5}
+.gift .steps{display:grid;gap:10px;margin-top:20px}
+.gift .steps div{display:flex;gap:12px;align-items:flex-start}
+.gift .steps b{font-family:var(--display);color:var(--saffron);font-size:22px;line-height:1;min-width:22px}
+.gift .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.gift .btn.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.gift .art{display:flex;justify-content:center;align-items:center}
+.gift .art img{max-height:300px;width:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+@media (max-width:860px){.gift{grid-template-columns:1fr;padding:26px}}
+
+.kirana{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+.kirana img{border-radius:22px;aspect-ratio:16/10;object-fit:cover;width:100%}
+.where{display:grid;gap:12px;margin-top:18px}
+.where div{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.where svg{flex:none}
+@media (max-width:860px){.kirana{grid-template-columns:1fr}}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:70;background:rgba(43,18,32,.45);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sheet{background:var(--card);border-radius:24px;max-width:860px;width:100%;max-height:100%;overflow:auto;position:relative;box-shadow:0 30px 80px rgba(43,18,32,.3)}
+.sheet .x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--paper-2);font-size:22px;line-height:1;z-index:2}
+.pdetail{display:grid;grid-template-columns:.9fr 1.1fr;gap:0}
+.pdetail .pi{background:radial-gradient(circle at 50% 60%,var(--paper-2),#fff 75%);display:flex;align-items:center;justify-content:center;padding:30px;min-height:320px}
+.pdetail .pi img,.pdetail .pi svg{max-height:320px;width:auto}
+.pdetail .pt{padding:30px 28px;display:flex;flex-direction:column;gap:14px}
+.pdetail dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:15px}
+.pdetail dt{font-weight:800;color:var(--muted)}
+.pdetail dd{margin:0}
+.pdetail ol{margin:0;padding-left:20px;display:grid;gap:4px}
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.sizes span{border:1.5px solid var(--line-2);border-radius:12px;padding:8px 12px;font-weight:700;font-size:14px}
+.sizes span b{font-family:var(--display)}
+@media (max-width:720px){.pdetail{grid-template-columns:1fr}.pdetail .pi{min-height:220px;padding:20px}.pdetail .pi img,.pdetail .pi svg{max-height:200px}}
+
+/* ===== EXPLORE ===== */
+.ex-hero{padding-block:44px 8px}
+.ex-hero h1{font-size:clamp(38px,6vw,64px)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.search{flex:1 1 240px;max-width:340px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 40px;border-radius:999px;border:1.5px solid var(--line-2);background:var(--card);font:inherit}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%)}
+select.sort{padding:10px 14px;border-radius:999px;border:1.5px solid var(--line-2);background:var(--card);font:inherit;font-weight:700;color:var(--ink-2)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.tcard:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.tcard .scene{height:170px;position:relative;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
+.tcard .scene .ttl{font-family:var(--hand);font-size:30px;line-height:1;position:relative;z-index:1}
+.tcard .scene .cup{position:absolute;right:14px;top:16px;width:64px;height:64px}
+.tcard .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tcard .by{font-size:13.5px;color:var(--muted)}
+.tcard .by b{color:var(--ink-2)}
+.tcard .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tcard .actions{display:flex;gap:8px;margin-top:auto}
+.like{border:1.5px solid var(--line-2);background:transparent;border-radius:999px;padding:6px 11px;font-weight:800;font-size:13px;display:inline-flex;gap:6px;align-items:center;margin-left:auto}
+.like[aria-pressed="true"]{border-color:var(--chilli);color:var(--chilli);background:#FDEDEB}
+.dec{position:absolute;inset:0;pointer-events:none}
+
+.community{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:860px){.community{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;min-width:0}
+.panel h3{margin-bottom:14px}
+.board{display:grid;gap:8px}
+.board .r{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--paper)}
+.board .r .n{font-family:var(--display);font-weight:800;color:var(--saffron-d);font-size:18px;text-align:center}
+.board .r small{display:block;color:var(--muted);font-size:13px}
+.board .r b.v{font-variant-numeric:tabular-nums}
+.wall{columns:2 200px;column-gap:12px}
+.note-card{break-inside:avoid;margin-bottom:12px;border-radius:14px;padding:12px 14px;background:#FFF6D9;transform:rotate(var(--rot,0deg));box-shadow:0 2px 6px rgba(43,18,32,.08)}
+.note-card p{font-family:var(--hand);font-size:23px;line-height:1.1}
+.note-card small{font-size:12.5px;color:var(--muted);font-weight:700}
+.empty{color:var(--muted);font-size:15px;border:1.5px dashed var(--line-2);border-radius:14px;padding:16px}
+
+/* personalise drawer */
+.form{display:grid;gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:14px;color:var(--ink-2)}
+.form input[type=text],.form textarea,.form select{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line-2);border-radius:12px;padding:11px 13px;width:100%}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--jamun);outline:none;background:#fff}
+.form textarea{resize:vertical;min-height:60px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.g2{grid-template-columns:1fr}}
+.form label.check,.check{display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-2);font-weight:600}
+.check input{width:20px;height:20px;accent-color:var(--jamun);margin-top:2px;flex:none}
+.personal{display:grid;grid-template-columns:1fr 300px;gap:0}
+.personal .f{padding:28px}
+.personal .side{padding:28px 24px;background:var(--paper)}
+@media (max-width:760px){.personal{grid-template-columns:1fr}.personal .side{order:-1;padding:22px}}
+.share{display:grid;gap:12px;margin-top:6px}
+.share .link{display:flex;gap:8px}
+.share .link input{flex:1;min-width:0;font-size:13px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line-2);background:#fff}
+.share .qr{display:flex;justify-content:center;padding:12px;background:#fff;border-radius:14px;border:1px solid var(--line)}
+.share .qr img,.share .qr canvas{width:150px!important;height:150px!important}
+.mini{border-radius:18px;overflow:hidden;position:relative;aspect-ratio:9/12;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.mini .cup{position:absolute;right:18px;top:24px;width:96px;height:96px}
+.mini .ttl{font-family:var(--hand);font-size:30px;line-height:1;position:relative;z-index:1}
+.mini .sub{font-size:13px;position:relative;z-index:1;opacity:.85;margin-top:6px}
+
+/* ===== CREATORS ===== */
+.cr-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding-block:44px 16px}
+.cr-hero h1{font-size:clamp(38px,6vw,64px)}
+@media (max-width:860px){.cr-hero{grid-template-columns:1fr}}
+.tiers{display:grid;gap:10px}
+.tier{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.tier .cups{font-family:var(--display);font-weight:800;font-size:18px;color:var(--saffron-d);min-width:58px}
+.tier small{display:block;color:var(--muted);font-size:13px}
+.tier.on{border-color:var(--tulsi);background:#F2F9F3}
+.studio{display:grid;grid-template-columns:1fr 340px;gap:26px;align-items:start}
+@media (max-width:960px){.studio{grid-template-columns:1fr}}
+.studio fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+.studio legend{font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:12px;padding:0}
+.studio legend span{font-family:var(--body);font-size:12px;letter-spacing:.14em;color:var(--saffron-d);font-weight:800;margin-right:8px}
+.opts{display:flex;gap:10px;flex-wrap:wrap}
+.opt{border:1.5px solid var(--line-2);background:var(--card);border-radius:14px;padding:10px 12px;text-align:left;min-width:120px;flex:1 1 140px}
+.opt[aria-pressed="true"]{border-color:var(--jamun);box-shadow:0 0 0 3px rgba(82,36,56,.15)}
+.opt b{display:block;font-size:14.5px}
+.opt small{color:var(--muted);font-size:12.5px;display:block;line-height:1.35}
+.swatch{height:34px;border-radius:10px;margin-bottom:8px}
+.stick{position:sticky;top:86px}
+.phone{border-radius:34px;border:10px solid #2B1220;background:#2B1220;box-shadow:var(--shadow);overflow:hidden;max-width:320px;margin:0 auto}
+.phone .mini{aspect-ratio:9/16;border-radius:24px}
+details.adv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+details.adv summary{font-weight:800;cursor:pointer}
+details.adv textarea{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;min-height:220px;margin-top:10px}
+.err{color:var(--chilli);font-weight:700;font-size:14px}
+.ok{color:var(--tulsi);font-weight:700;font-size:14px}
+.mine{display:grid;gap:12px}
+.mine .m{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.mine .sw{width:56px;height:56px;border-radius:12px}
+.mine .stats{font-size:13px;color:var(--muted)}
+.mine .stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+.mine .act{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+
+footer{margin-top:40px;padding-block:36px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;align-items:center}
+footer img{height:28px;width:auto}
+
+/* ===== PLAY ===== */
+.play{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;overflow-y:auto;
+  padding:calc(env(safe-area-inset-top,0px) + 56px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(16px,env(safe-area-inset-left,0px));
+  background:var(--pbg);color:var(--pink)}
+.play canvas.fx{position:fixed;inset:0;pointer-events:none}
+.play .close{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(14px,env(safe-area-inset-right,0px));z-index:3;border:1.5px solid currentColor;background:transparent;border-radius:999px;padding:7px 14px;font-weight:800;font-size:14px;color:var(--pink);opacity:.85}
+.stage{position:relative;z-index:2;width:100%;max-width:560px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.stage .big{font-family:var(--display);font-size:clamp(32px,7vw,50px);font-weight:750;color:var(--pink)}
+.stage .sub{opacity:.85;max-width:44ch}
+.stage .btn{background:var(--pacc);color:var(--pbtn)}
+.stage .btn.ghost{background:transparent;color:var(--pink);box-shadow:inset 0 0 0 1.5px currentColor}
+.prog{width:min(320px,80vw);height:10px;border-radius:999px;background:rgba(0,0,0,.12);overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--pacc);transition:width .15s}
+.stir{width:min(300px,78vw);aspect-ratio:1;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas.catch{width:min(360px,88vw);aspect-ratio:9/10;border-radius:18px;background:rgba(255,255,255,.35);touch-action:none}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:min(360px,88vw)}
+.mcard{aspect-ratio:3/4;border-radius:12px;border:0;padding:0;position:relative;transform-style:preserve-3d;transition:transform .35s;background:transparent}
+.mcard .face{position:absolute;inset:0;border-radius:12px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:6px;text-align:center;font-weight:800}
+.mcard .back{background:repeating-linear-gradient(45deg,var(--pacc) 0 10px,color-mix(in srgb,var(--pacc) 70%,#fff) 10px 20px)}
+.mcard .front{background:#fff;color:#2B1220;transform:rotateY(180deg);font-family:var(--display);font-size:16px}
+.mcard.up{transform:rotateY(180deg)}
+.mcard.done .front{background:#DDEFD9}
+.blowbox{position:relative;width:min(380px,88vw);border-radius:18px;background:#fff;color:#2B1220;padding:26px 20px;overflow:hidden}
+.blowbox p{font-family:var(--hand);font-size:28px;line-height:1.1}
+.blowbox .steam{position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,#fff,rgba(255,255,255,.93) 45%,rgba(238,232,236,.97));transition:opacity .35s}
+.letter{width:min(520px,92vw);background:#FFFDF7;color:#2B1220;border-radius:6px;padding:28px 24px 22px;text-align:left;box-shadow:0 20px 50px rgba(0,0,0,.25);position:relative}
+.letter .to{font-family:var(--display);font-size:26px;font-weight:700}
+.letter .typed{font-family:var(--hand);font-size:26px;line-height:1.15;margin-top:10px;min-height:2.3em;white-space:pre-wrap}
+.letter .memlist{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.letter .memlist div{border-left:3px solid var(--pacc);padding-left:10px;font-size:15.5px;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.letter .memlist div.on{opacity:1;transform:none}
+.letter .from{font-family:var(--hand);font-size:28px;text-align:right;margin-top:14px}
+.giftbox{width:min(520px,92vw);display:grid;gap:12px;text-align:left}
+.ticket{background:var(--pacc);color:var(--pbtn);border-radius:16px;padding:18px 20px;position:relative}
+.ticket .code{font-family:var(--display);font-size:30px;letter-spacing:.08em;font-weight:800}
+.ticket small{display:block;font-weight:700}
+.trio{background:#fff;color:#2B1220;border-radius:16px;padding:14px;display:flex;gap:14px;align-items:center}
+.trio img{width:84px;height:auto;flex:none}
+.credit{font-size:13px;opacity:.8}
+.credit a{color:inherit}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 86px);transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:800;padding:10px 18px;border-radius:999px;z-index:120;font-size:14px;box-shadow:var(--shadow)}
+[hidden]{display:none!important}
+@media (max-width:760px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pcard{padding:10px}.pcard .img{height:130px}.pcard .img img{max-height:122px}.pcard .meta{flex-wrap:wrap;gap:4px;font-size:12.5px}.pcard h4{font-size:15.5px}.pcard .price{font-size:17px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="Rasmitra home"><img src="assets/logo.webp" alt="Rasmitra" width="131" height="34"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/explore" data-nav="explore">Explore</a>
+      <a href="#/create" data-nav="create">Creators</a>
+    </nav>
+    <a class="btn saffron sm cta" href="#/explore">Send a warm wish</a>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div id="page-home" data-page>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Garmi ho ya sardi, Rasmitra saath</p>
+        <h1>Every season, <em>a Rasmitra.</em></h1>
+        <p class="lead">The sharbat your summers grew up with, now with a winter cup and a tangy kitchen shelf. Three ranges, one trusted name, sold at the kirana around your corner.</p>
+        <div class="actions">
+          <a class="btn" href="#range">Explore the range</a>
+          <a class="btn ghost" href="#/explore">Send someone a warm wish</a>
+        </div>
+        <div class="facts">
+          <span><b>3 ranges</b>for every season</span>
+          <span><b>₹5 to ₹199</b>a pack for every pocket</span>
+          <span><b>At your kirana</b>and on quick-commerce</span>
+        </div>
+      </div>
+      <div class="shelf"><img src="assets/hero_home.webp" alt="The full Rasmitra family on a carved wooden shelf: sharbat bottles, Winter Sips packs and Trio, and Chatkara chutneys and masalas" width="1672" height="941" fetchpriority="high"></div>
+    </section>
+  </div>
+
+  <section class="wrap" aria-labelledby="brandsH">
+    <div class="sec-head"><p class="eyebrow">Our brands</p><h2 id="brandsH">One family, three ranges</h2></div>
+    <div class="brands">
+      <button class="brand rs" data-brand="classics">
+        <div class="bl"><img src="assets/logo.webp" alt="Rasmitra"></div>
+        <span class="when" style="color:#B1342A">Sharbat and squash, best March to July</span>
+        <p>The family's summer default. Rose, khus, aam panna and kala khatta, mixed one part to five with chilled water.</p>
+        <div class="packs"><img src="assets/p_rs_rose.webp" alt=""><img src="assets/p_rs_khus.webp" alt=""><img src="assets/p_rs_aam.webp" alt=""><img src="assets/p_rs_kala.webp" alt=""></div>
+      </button>
+      <button class="brand ws" data-brand="winter">
+        <div class="bl"><img src="assets/lk_wintersips.webp" alt="Rasmitra Winter Sips"></div>
+        <span class="when" style="color:var(--jamun)">Instant winter drinks, best October to February</span>
+        <p>Haldi Doodh, Adrak-Tulsi Kadha and Badam Kesar. Stir into hot milk or water, ready in two minutes.</p>
+        <div class="packs"><img src="assets/p_ws_jar.webp" alt=""><img src="assets/p_ws_kadha.webp" alt=""><img src="assets/p_ws_sachet.webp" alt=""></div>
+      </button>
+      <button class="brand ck" data-brand="chatkara">
+        <div class="bl"><img src="assets/lk_chatkara.webp" alt="Chatkara by Rasmitra"></div>
+        <span class="when" style="color:var(--saffron-d)">Chutneys and masalas, all year</span>
+        <p>Imli-Saunth, Mango Chunda, Chaat and Jaljeera masala. The tang of your favourite thela, made on the same lines as our sharbat.</p>
+        <div class="packs"><img src="assets/p_ck_imli.webp" alt=""><img src="assets/p_ck_pouch.webp" alt=""><img src="assets/p_ck_jaljeera.webp" alt=""></div>
+      </button>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="sumH">
+    <div class="kirana">
+      <img src="assets/p_rs_family.webp" alt="Rasmitra Rose, Khus, Aam Panna and Kala Khatta bottles with a glass of rose sharbat and a glass of kala khatta" loading="lazy">
+      <div>
+        <p class="eyebrow">The classics</p>
+        <h2 id="sumH">Summer, the way your family remembers it</h2>
+        <p class="lead" style="margin-top:14px">Rose with sabja and cold milk, khus on the hottest afternoon, aam panna against the loo, kala khatta poured over crushed ice. One part sharbat to five parts chilled water, the way it has always been.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><button class="btn" type="button" data-jump="classics">See the four classics</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="yearH">
+    <div class="sec-head"><p class="eyebrow">Your year with Rasmitra</p><h2 id="yearH">Something on the shelf every month</h2></div>
+    <div class="year"><table id="yearTable" aria-label="When each range is in season"></table>
+      <p class="note">Darker blocks mark each range's peak months. Chatkara is the everyday constant; Winter Sips takes over as the sharbat season ends.</p></div>
+  </section>
+
+  <section class="wrap" id="range" aria-labelledby="rangeH">
+    <div class="sec-head row">
+      <div style="display:grid;gap:10px"><p class="eyebrow">The range</p><h2 id="rangeH">Explore every pack</h2></div>
+      <div class="tabs" role="group" aria-label="Filter by brand" id="rangeTabs"></div>
+    </div>
+    <div class="products" id="products"></div>
+  </section>
+
+  <div class="wrap">
+    <section>
+      <div class="gift">
+        <div>
+          <p class="eyebrow" style="color:var(--saffron)">Ek Garam Wish</p>
+          <h2>Can't be there this winter? Send a warm wish.</h2>
+          <p class="lead" style="margin-top:14px">Pick a wish experience, add three memories only you two share, and send the link. They play a little game, the steam clears, the letter writes itself, and a free cup waits at their kirana.</p>
+          <div class="steps">
+            <div><b>1</b><span>Choose an experience made by Rasmitra or our creators.</span></div>
+            <div><b>2</b><span>Make it yours with names and memories.</span></div>
+            <div><b>3</b><span>Share the link or QR. Add the Winter Sips Trio if you want to send the real thing.</span></div>
+          </div>
+          <div class="actions"><a class="btn saffron" href="#/explore">Explore wish experiences</a><a class="btn ghost" href="#/create">Become a creator</a></div>
+        </div>
+        <div class="art"><img src="assets/p_ws_trio.webp" alt="The Winter Sips Trio gift box with Haldi Doodh, Kadha and Badam Kesar"></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="wrap" aria-labelledby="whereH">
+    <div class="kirana">
+      <img src="assets/kirana.webp" alt="A kirana owner hands a Winter Sips Badam Kesar sachet across the counter, Chatkara jars on the shelf behind" loading="lazy">
+      <div>
+        <p class="eyebrow">Where to find us</p>
+        <h2 id="whereH">Right where your sharbat already is</h2>
+        <div class="where">
+          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9" fill="none" stroke="#522438" stroke-width="1.8"/><path d="M4 9h16v11H4z" fill="#FDECC8" stroke="#522438" stroke-width="1.8"/><path d="M10 20v-6h4v6" fill="none" stroke="#522438" stroke-width="1.8"/></svg><span><b>Your neighbourhood kirana.</b> ₹5 and ₹10 packs hang right by the counter, next to Rasmitra sharbat.</span></div>
+          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="#F7ECF1" stroke="#522438" stroke-width="1.8"/><path d="M10 18.5h4" stroke="#522438" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Quick-commerce apps.</b> Family jars, the Kadha 10-pack and the Winter Sips Trio, delivered in minutes.</span></div>
+          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z" fill="#E3F1E6" stroke="#2F7D4A" stroke-width="1.8"/><path d="M3 10h18" stroke="#2F7D4A" stroke-width="1.8"/></svg><span><b>Modern trade.</b> Larger jars and value packs on supermarket shelves.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= EXPLORE ================= -->
+<div id="page-explore" data-page hidden>
+  <div class="wrap">
+    <section class="ex-hero">
+      <p class="eyebrow">Explore</p>
+      <h1>Find the wish that sounds like you</h1>
+      <p class="lead" style="margin-top:14px">Every experience pairs a theme, a little game and a winter cup. Try any of them first, then make it yours in two minutes.</p>
+      <div class="filters">
+        <div class="tabs" id="occChips" role="group" aria-label="Filter by occasion"></div>
+      </div>
+      <div class="filters">
+        <label class="search"><span class="muted" style="position:absolute;left:-9999px">Search</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#7D6470" stroke-width="2"/><path d="M20 20l-4-4" stroke="#7D6470" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="tSearch" placeholder="Search by name or creator" aria-label="Search experiences">
+        </label>
+        <select class="sort" id="tSort" aria-label="Sort"><option value="pop">Most loved</option><option value="new">Newest</option></select>
+      </div>
+    </section>
+    <div class="tgrid" id="tgrid"></div>
+    <p class="empty" id="tEmpty" hidden>No experiences match. Try another occasion or clear the search.</p>
+
+    <section aria-labelledby="commH">
+      <div class="sec-head"><p class="eyebrow">Community</p><h2 id="commH">Creators and the Winter Wall</h2></div>
+      <div class="community">
+        <div class="panel">
+          <h3>Most used experiences</h3>
+          <div class="board" id="board"></div>
+        </div>
+        <div class="panel">
+          <h3>Winter Wall</h3>
+          <div class="wall" id="wall"></div>
+          <p class="empty" id="wallEmpty">When you send a wish and choose to share it, your first memory appears here as a note.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ================= CREATORS ================= -->
+<div id="page-create" data-page hidden>
+  <div class="wrap">
+    <section class="cr-hero">
+      <div>
+        <p class="eyebrow">Creators</p>
+        <h1>Design a wish once. Earn a cup every time it's sent.</h1>
+        <p class="lead" style="margin-top:14px">Build a wish experience: its theme, its game, its cup and the words that open it. Publish it to get your own link and code. Every wish someone sends with it counts towards your rewards.</p>
+      </div>
+      <div class="tiers" id="tiers"></div>
+    </section>
+
+    <section style="padding-top:20px">
+      <div class="studio">
+        <form id="studio" novalidate>
+          <fieldset>
+            <legend><span>01</span>Name it</legend>
+            <div class="form">
+              <label for="sName">Experience name<input type="text" id="sName" maxlength="40" placeholder="Maa's First Winter Alone"></label>
+              <div class="g2">
+                <label for="sBy">Your name<input type="text" id="sBy" maxlength="28" placeholder="Riya"></label>
+                <label for="sHandle">Your handle<input type="text" id="sHandle" maxlength="28" placeholder="@chai.with.riya"></label>
+              </div>
+              <label for="sOcc">Occasion<select id="sOcc"></select></label>
+            </div>
+          </fieldset>
+          <fieldset><legend><span>02</span>Pick a theme</legend><div class="opts" id="sThemes"></div></fieldset>
+          <fieldset><legend><span>03</span>Pick the game</legend><div class="opts" id="sGames"></div></fieldset>
+          <fieldset><legend><span>04</span>Pick the cup</legend><div class="opts" id="sCups"></div></fieldset>
+          <fieldset>
+            <legend><span>05</span>Write the words</legend>
+            <div class="form">
+              <label for="sOpener">Opening line of the letter<textarea id="sOpener" maxlength="220" placeholder="I know you will make yourself one cup and give the second one away again. Not this time."></textarea></label>
+              <label for="sP1">Memory prompt 1<input type="text" id="sP1" maxlength="60" value="The first winter you..."></label>
+              <label for="sP2">Memory prompt 2<input type="text" id="sP2" maxlength="60" value="The thing they always say when it gets cold"></label>
+              <label for="sP3">Memory prompt 3<input type="text" id="sP3" maxlength="60" value="One inside joke"></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><span>06</span>Advanced</legend>
+            <details class="adv">
+              <summary>Edit the experience code</summary>
+              <p class="muted" style="margin-top:8px;font-size:14px">Every experience is a small JSON recipe. Edit colours, words, the particle effect or the game directly, then apply. Colours must be hex values like #522438.</p>
+              <textarea id="sCode" spellcheck="false" aria-label="Experience code"></textarea>
+              <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap"><button type="button" class="btn sm" id="applyCode">Apply code</button><span id="codeMsg"></span></div>
+            </details>
+          </fieldset>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button type="button" class="btn ghost" id="testPlay">Test play</button>
+            <button type="button" class="btn" id="publish">Publish and get my link</button>
+          </div>
+          <div class="share panel" id="pubBox" hidden style="margin-top:16px">
+            <h3>Your experience is live</h3>
+            <p class="muted">Share this link anywhere. Everyone who opens it can make the wish their own.</p>
+            <div class="link"><input type="text" id="pubLink" readonly aria-label="Your experience link"><button type="button" class="btn sm" id="pubCopy">Copy</button></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn ghost sm" id="pubWa" target="_blank" rel="noopener">Share on WhatsApp</a><a class="btn ghost sm" id="pubOpen">Open it</a></div>
+            <div class="qr" id="pubQr" aria-label="QR code for your experience"></div>
+          </div>
+        </form>
+        <aside class="stick">
+          <div class="phone"><div class="mini" id="sPreview"></div></div>
+          <p class="muted" style="text-align:center;margin-top:10px;font-size:13.5px">Live preview of your cover</p>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="mineH">
+      <div class="sec-head"><p class="eyebrow">Dashboard</p><h2 id="mineH">Your experiences</h2></div>
+      <div class="mine" id="mine"></div>
+      <p class="empty" id="mineEmpty">Nothing published yet. Your experiences, their links and how many wishes they have sent will show here.</p>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.webp" alt="Rasmitra">
+    <span>Rasmitra, Winter Sips and Chatkara are brands of Rasmitra Beverages Limited. Concept site by Velocity Squad, IIM Bangalore.</span>
+  </div>
+</footer>
+
+<!-- product modal -->
+<div class="modal" id="pModal" hidden role="dialog" aria-modal="true" aria-labelledby="pmTitle"><div class="sheet"><button class="x" data-close aria-label="Close">×</button><div id="pmBody"></div></div></div>
+<!-- personalise modal -->
+<div class="modal" id="mModal" hidden role="dialog" aria-modal="true" aria-labelledby="mmTitle"><div class="sheet"><button class="x" data-close aria-label="Close">×</button><div id="mmBody"></div></div></div>
+<!-- play -->
+<div class="play" id="play" hidden role="dialog" aria-modal="true" aria-label="Your warm wish"><canvas class="fx" id="fx"></canvas><button class="close" id="playClose" type="button">Close</button><div class="stage" id="stage"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(() => {
+'use strict';
+/* -------- config: plug a backend here to count uses across devices --------
+   Set API_URL to an endpoint that accepts POST {event, tid} and GET ?top=1 returning [{tid, uses}].
+   Leave empty to keep counts on this device only. */
+const API_URL = '';
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('rsm.' + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('rsm.' + k, JSON.stringify(v)); } catch {} }
+};
+function toast(t) { const d = document.createElement('div'); d.className = 'toast'; d.textContent = t; document.body.appendChild(d); setTimeout(() => d.remove(), 2400); }
+const b64e = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const b64d = s => { s = s.replace(/-/g, '+').replace(/_/g, '/'); while (s.length % 4) s += '='; return JSON.parse(decodeURIComponent(escape(atob(s)))); };
+const baseUrl = () => location.href.split('#')[0];
+const isHex = c => typeof c === 'string' && /^#[0-9a-fA-F]{6}$/.test(c);
+async function copy(text, input) { try { await navigator.clipboard.writeText(text); toast('Copied'); } catch { if (input) { input.select(); toast('Selected. Press copy on your keyboard.'); } } }
+
+/* ===================== DATA ===================== */
+const bottle = (c1, c2, label) => `<svg viewBox="0 0 120 240" width="80" height="160" role="img" aria-label="${label} bottle"><rect x="48" y="6" width="24" height="18" rx="4" fill="#3A1626"/><path d="M50 24h20v22c18 8 26 22 26 40v124a20 20 0 0 1-20 20H34a20 20 0 0 1-20-20V86c0-18 8-32 26-40z" fill="${c1}"/><path d="M50 24h20v22c18 8 26 22 26 40v124a20 20 0 0 1-20 20H34a20 20 0 0 1-20-20V86c0-18 8-32 26-40z" fill="url(#gl)" opacity=".35"/><rect x="18" y="104" width="84" height="76" rx="6" fill="#FFF8EE"/><text x="60" y="130" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="800" font-size="15" fill="#522438">Rasmitra</text><text x="60" y="152" text-anchor="middle" font-family="Mulish,sans-serif" font-weight="800" font-size="11" fill="${c2}">${label}</text><text x="60" y="170" text-anchor="middle" font-family="Mulish,sans-serif" font-size="9" fill="#7D6470">750 ml</text><defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/></linearGradient></defs></svg>`;
+const PRODUCTS = [
+  { id: 'haldi', brand: 'winter', name: 'Haldi Doodh', line: 'Rasmitra Winter Sips', img: 'p_ws_jar.webp', tag: 'Hero', blurb: 'Turmeric latte premix with black pepper and elaichi. Stir into hot milk for a family winter cup in two minutes.',
+    inside: 'Turmeric, milk solids, sugar, black pepper, cardamom', how: ['Heat 150 ml milk', 'Add one sachet or two spoons', 'Stir for 30 seconds and sip'], sizes: [['20 g sachet', '₹10'], ['250 g jar', '₹149']], best: 'Winter evenings, after a long day, when someone is down with a cold' },
+  { id: 'kadha', brand: 'winter', name: 'Adrak-Tulsi Kadha', line: 'Rasmitra Winter Sips', img: 'p_ws_kadha.webp', tag: 'Hero', blurb: 'Ginger, tulsi, cinnamon and clove, the way nani makes it, ready in a cup of hot water.',
+    inside: 'Ginger, tulsi, cinnamon, clove, black pepper, jaggery', how: ['Boil 150 ml water', 'Add one stick sachet', 'Let it sit for one minute, sip warm'], sizes: [['10 x 10 g carton', '₹99'], ['10 g stick', '₹10']], best: 'The first cough of winter, rainy evenings' },
+  { id: 'badam', brand: 'winter', name: 'Badam Kesar', line: 'Rasmitra Winter Sips', img: 'p_ws_sachet.webp', tag: 'New', blurb: 'Almond and saffron milk premix for celebrations, guests and festive evenings.',
+    inside: 'Almond, saffron, milk solids, sugar, cardamom', how: ['Heat 150 ml milk', 'Add one sachet', 'Stir and top with crushed pista if you like'], sizes: [['20 g sachet', '₹10']], best: 'Diwali guests, birthdays, a good-news evening' },
+  { id: 'trio', brand: 'winter', name: 'Winter Sips Trio', line: 'Rasmitra Winter Sips', img: 'p_ws_trio.webp', tag: 'Gift', blurb: 'Haldi Doodh, Kadha and Badam Kesar in one gift box. The real thing to send with a warm wish.',
+    inside: 'One pouch each of Haldi Doodh, Adrak-Tulsi Kadha and Badam Kesar', how: ['Order on your quick-commerce app', 'Add a note or send an Ek Garam Wish link', 'Delivered in minutes'], sizes: [['Gift box', '₹199']], best: 'Gifting to family away from home, Diwali, thank-yous' },
+  { id: 'imli', brand: 'chatkara', name: 'Imli-Saunth Chutney', line: 'Chatkara by Rasmitra', img: 'p_ck_imli.webp', tag: 'Hero', blurb: 'Sweet tamarind and dry-ginger chutney, made on the same hot-fill lines as our sharbat. Chaat-ready from the jar.',
+    inside: 'Tamarind, jaggery, dry ginger, cumin, black salt, red chilli', how: ['Drizzle on papdi chaat, samosa or dahi bhalla', 'Refrigerate after opening'], sizes: [['40 g pouch', '₹10'], ['200 g jar', '₹65']], best: 'Evening chaat, tiffin, every day of the year' },
+  { id: 'pouch', brand: 'chatkara', name: 'Imli-Saunth Pouch', line: 'Chatkara by Rasmitra', img: 'p_ck_pouch.webp', tag: '₹10 trial', blurb: 'The same chutney in a spouted 40 g pouch. The easiest way to try Chatkara.',
+    inside: 'Tamarind, jaggery, dry ginger, cumin, black salt', how: ['Squeeze straight onto your plate', 'Re-cap and keep cool'], sizes: [['40 g pouch', '₹10']], best: 'Trying it for the first time, single servings' },
+  { id: 'chunda', brand: 'chatkara', name: 'Mango Chunda', line: 'Chatkara by Rasmitra', img: 'p_ck_chunda.webp', tag: 'All year', blurb: 'Grated raw mango slow-cooked with sugar and spice. Sweet, sour and just a little hot.',
+    inside: 'Raw mango, sugar, red chilli, cumin, salt', how: ['Pair with paratha, thepla or khichdi', 'Use a dry spoon'], sizes: [['400 g jar', '₹140']], best: 'Breakfast parathas and tiffin boxes' },
+  { id: 'chaat', brand: 'chatkara', name: 'Chaat Masala', line: 'Chatkara by Rasmitra', img: 'p_ck_masala.webp', tag: 'New', blurb: 'Tangy amchur and black salt blend for fruit, chaat and anything that needs a kick.',
+    inside: 'Amchur, black salt, cumin, coriander, black pepper, mint', how: ['Sprinkle on fruit, salads, chaat and fries'], sizes: [['8 g sachet', '₹5'], ['100 g carton', '₹75']], best: 'Snack time, all year' },
+  { id: 'jaljeera', brand: 'chatkara', name: 'Jaljeera Masala', line: 'Chatkara by Rasmitra', img: 'p_ck_jaljeera.webp', tag: 'Drink', blurb: 'One spoon in chilled water with lemon and mint. Our summer drink, in a masala box.',
+    inside: 'Cumin, mint, black salt, amchur, black pepper, ginger', how: ['Add one spoon to a glass of chilled water', 'Squeeze lemon, add mint and ice'], sizes: [['100 g carton', '₹75']], best: 'Hot afternoons, after a heavy meal' },
+  { id: 'sachets', brand: 'chatkara', name: 'Chaat Masala Sachets', line: 'Chatkara by Rasmitra', img: 'p_ck_sachets.webp', tag: '₹5 strip', blurb: 'Single-use 8 g sachets, sold in strips at the kirana counter.',
+    inside: 'Amchur, black salt, cumin, coriander, black pepper', how: ['Tear and sprinkle'], sizes: [['8 g sachet', '₹5']], best: 'On the go, one-off cravings' },
+  { id: 'rose', brand: 'classics', name: 'Rose Sharbat', line: 'Rasmitra', img: 'p_rs_rose.webp', tag: 'Classic', blurb: 'The bottle every summer in the family has started with. Mix one part to five with chilled water or milk.',
+    inside: 'Sugar, rose distillate, permitted colour', how: ['Mix 30 ml with 150 ml chilled water or milk', 'Add ice and basil seeds if you like'], sizes: [['750 ml bottle', '₹195']], best: 'Summer afternoons, guests at the door' },
+  { id: 'khus', brand: 'classics', name: 'Khus Sharbat', line: 'Rasmitra', img: 'p_rs_khus.webp', tag: 'Classic', blurb: 'Cooling vetiver sharbat, green as a summer lawn.',
+    inside: 'Sugar, khus extract, permitted colour', how: ['Mix 30 ml with 150 ml chilled water', 'Add a squeeze of lemon'], sizes: [['750 ml bottle', '₹195']], best: 'The hottest afternoons' },
+  { id: 'aam', brand: 'classics', name: 'Aam Panna Squash', line: 'Rasmitra', img: 'p_rs_aam.webp', tag: 'Classic', blurb: 'Raw mango, roasted cumin and black salt, the north Indian loo-buster.',
+    inside: 'Raw mango pulp, sugar, roasted cumin, black salt', how: ['Mix 40 ml with 160 ml chilled water', 'Add mint'], sizes: [['750 ml bottle', '₹145']], best: 'May and June' },
+  { id: 'kala', brand: 'classics', name: 'Kala Khatta', line: 'Rasmitra', img: 'p_rs_kala.webp', tag: 'Classic', blurb: 'The tangy jamun syrup from every gola stall, now at home.',
+    inside: 'Sugar, jamun, black salt, cumin', how: ['Mix with soda or chilled water', 'Pour over crushed ice for a gola'], sizes: [['750 ml bottle', '₹145']], best: 'Monsoon evenings, gola nights' },
+];
+const BRANDS = { all: 'All', winter: 'Winter Sips', chatkara: 'Chatkara', classics: 'Rasmitra classics' };
+
+const OCC = { family: 'Maa and Papa', grand: 'Dadi and Nani', partner: 'Partner', friends: 'Friends', getwell: 'Get well soon', diwali: 'Diwali', thanks: 'Thank you' };
+const THEMES = {
+  kitchen: { name: 'Kitchen morning', bg: '#FFF1DA', bg2: '#F6D29A', ink: '#3A1626', acc: '#C9761C', btn: '#FFFFFF', fx: 'steam' },
+  snowy: { name: 'Snowy terrace', bg: '#EAF2F8', bg2: '#B9D2E8', ink: '#1F3550', acc: '#3E6FA3', btn: '#FFFFFF', fx: 'snow' },
+  diya: { name: 'Diya night', bg: '#3A1626', bg2: '#6E3350', ink: '#FFF4E5', acc: '#E7A32B', btn: '#2B1220', fx: 'sparks' },
+  rose: { name: 'Rose garden', bg: '#FCE8EC', bg2: '#F2B7C5', ink: '#5A1E2E', acc: '#C2416A', btn: '#FFFFFF', fx: 'petals' },
+  mango: { name: 'Mango summer', bg: '#FFF6CC', bg2: '#FFD45E', ink: '#3D2E00', acc: '#2F7D4A', btn: '#FFFFFF', fx: 'leaves' },
+};
+const GAMES = { stir: ['Stir the cup', 'Swirl until it turns golden'], catch: ['Catch the masala', 'Catch five falling ingredients'], match: ['Memory match', 'Pair three ingredient cards'], blow: ['Blow the steam', 'Tap to clear the note'] };
+const CUPS = {
+  haldi: { name: 'Haldi Doodh', color: '#E9B23A', milk: '#F5E9CF', bits: ['haldi', 'kali mirch', 'doodh', 'gur', 'elaichi'], img: 'p_ws_jar.webp' },
+  kadha: { name: 'Adrak-Tulsi Kadha', color: '#8A4B2A', milk: '#E8D6C4', bits: ['adrak', 'tulsi', 'laung', 'dalchini', 'gur'], img: 'p_ws_kadha.webp' },
+  badam: { name: 'Badam Kesar', color: '#F0C766', milk: '#FBF0DA', bits: ['badam', 'kesar', 'elaichi', 'doodh', 'pista'], img: 'p_ws_sachet.webp' },
+};
+const P3 = ['The first winter you...', 'The thing they always say when it gets cold', 'One inside joke'];
+const STUDIO = [
+  { id: 'rs-maa', name: "Maa's Winter Cup", by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'family', theme: 'kitchen', game: 'stir', cup: 'haldi', opener: 'Maa, I know you will make yourself one cup and give the second one away again. Not this time.', prompts: P3, created: 9 },
+  { id: 'rs-getwell', name: 'Get Well Kadha', by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'getwell', theme: 'snowy', game: 'blow', cup: 'kadha', opener: 'Heard you are down with a cold. Sip this slowly, under the blanket, phone away.', prompts: ['When you last took a sick day properly', 'Your go-to excuse for not resting', 'What we will do once you are better'], created: 8 },
+  { id: 'rs-diwali', name: 'Diwali Mithaas', by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'diwali', theme: 'diya', game: 'match', cup: 'badam', opener: 'Lights, mithai, too many relatives. Before all of it, one cup that is only for you.', prompts: ['Our best Diwali memory', 'The sweet you always steal first', 'Who wins the cards this year'], created: 7 },
+  { id: 'rs-distance', name: 'Long-Distance Chai Date', by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'partner', theme: 'rose', game: 'catch', cup: 'haldi', opener: 'I am not there to steal your blanket, so here is the next best thing.', prompts: ['Our first winter together', 'What you always say when I am cold', 'Our inside joke'], created: 6 },
+  { id: 'rs-hostel', name: 'Hostel to Home', by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'family', theme: 'snowy', game: 'stir', cup: 'haldi', opener: 'The mess makes everything except what you make. This one is from me to you, for a change.', prompts: ['The first parcel you sent me', 'What you say on every call', 'The dish I miss most'], created: 5 },
+  { id: 'rs-roomie', name: 'Roomie, Thank You', by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'thanks', theme: 'mango', game: 'catch', cup: 'badam', opener: 'For the person who knows exactly how much sugar I take. Your turn now.', prompts: ['The night you saved me before an exam', 'Your most repeated line', 'Our room rule nobody follows'], created: 4 },
+  { id: 'rs-dadi', name: "Dadi's Recipe Book", by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'grand', theme: 'kitchen', game: 'match', cup: 'kadha', opener: 'You taught me what winter is supposed to taste like. Here is one back.', prompts: ['The recipe you never wrote down', 'Your cure for every cold', 'The story you tell every winter'], created: 3 },
+  { id: 'rs-first', name: 'First Winter Together', by: 'Rasmitra Studio', handle: '@rasmitra', occ: 'partner', theme: 'diya', game: 'blow', cup: 'badam', opener: 'Our first winter. I wanted the first warm thing you drink this season to be from me.', prompts: ['The moment I knew', 'What you say when I steal the quilt', 'The plan for our next trip'], created: 2 },
+];
+
+/* ===================== ROUTER ===================== */
+function route() {
+  const h = location.hash || '#/';
+  closeModals(false);
+  if (h.startsWith('#/w/')) { try { const w = sanitizeWish(b64d(h.slice(4))); show('explore'); track('open', w.t.id); play(w, false); } catch { show('explore'); toast('That wish link looks broken. Ask the sender for it again.'); } return; }
+  if (h.startsWith('#/t/')) { try { const t = sanitizeTemplate(b64d(h.slice(4))); saveSeen(t); show('explore'); personalise(t); } catch { show('explore'); toast('That experience link looks broken.'); } return; }
+  if (h.startsWith('#/explore')) return show('explore');
+  if (h.startsWith('#/create')) return show('create');
+  if (h.startsWith('#/') || h === '') return show('home');
+}
+function show(p) {
+  $('#play').hidden = true; document.body.style.overflow = ''; stopFx();
+  $$('[data-page]').forEach(el => el.hidden = el.id !== 'page-' + p);
+  $$('[data-nav]').forEach(a => { if (a.dataset.nav === p) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  if (p === 'explore') renderExplore();
+  if (p === 'create') renderStudio();
+  document.title = { home: 'Rasmitra | Every Season, a Rasmitra', explore: 'Explore wishes | Rasmitra', create: 'Creators | Rasmitra' }[p];
+  if (!location.hash.includes('/w/') && !location.hash.includes('/t/')) window.scrollTo(0, 0);
+}
+addEventListener('hashchange', route);
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (a && !a.getAttribute('href').startsWith('#/') && a.getAttribute('href').length > 1) { e.preventDefault(); const t = document.getElementById(a.getAttribute('href').slice(1)); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }
+});
+
+/* ===================== HOME ===================== */
+let rangeFilter = 'all';
+function renderHome() {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const rows = [['Rasmitra classics', '#D9465E', [0, 0, 1, 2, 2, 2, 2, 1, 1, 0, 0, 0]], ['Winter Sips', '#6E3350', [2, 2, 1, 0, 0, 0, 0, 0, 1, 2, 2, 2]], ['Chatkara', '#E7A32B', [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1]]];
+  $('#yearTable').innerHTML = `<thead><tr><th></th>${months.map(m => `<th scope="col">${m}</th>`).join('')}</tr></thead><tbody>${rows.map(([n, c, v]) => `<tr><th scope="row" class="rowh">${n}</th>${v.map(x => `<td style="--c:${c}" class="${x === 2 ? 'hi' : x === 1 ? 'mid' : ''}" aria-label="${x === 2 ? 'peak' : x === 1 ? 'in season' : 'off season'}"></td>`).join('')}</tr>`).join('')}</tbody>`;
+  $('#rangeTabs').innerHTML = Object.entries(BRANDS).map(([k, l]) => `<button class="chip" data-k="${k}" aria-pressed="${rangeFilter === k}">${l}</button>`).join('');
+  const list = PRODUCTS.filter(p => rangeFilter === 'all' || p.brand === rangeFilter);
+  $('#products').innerHTML = list.map(p => `<button class="pcard" data-p="${p.id}" aria-label="${esc(p.name)}, see details">
+    <div class="img">${p.img ? `<img src="assets/${p.img}" alt="" loading="lazy">` : p.svg}</div>
+    <div class="meta"><span>${esc(p.line)}</span><span class="tag ${p.brand === 'chatkara' ? 'saffron' : p.brand === 'classics' ? '' : 'green'}">${esc(p.tag)}</span></div>
+    <h4>${esc(p.name)}</h4>
+    <div class="meta"><span>${esc(p.sizes[0][0])}</span><span class="price">${p.sizes.length > 1 ? 'from ' : ''}${esc(p.sizes[0][1])}</span></div></button>`).join('');
+}
+$('#rangeTabs').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; rangeFilter = b.dataset.k; renderHome(); });
+$$('[data-jump]').forEach(b => b.addEventListener('click', () => { rangeFilter = b.dataset.jump; renderHome(); $('#range').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }));
+$$('.brand').forEach(b => b.addEventListener('click', () => { rangeFilter = b.dataset.brand; renderHome(); $('#range').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }));
+$('#products').addEventListener('click', e => { const c = e.target.closest('[data-p]'); if (c) openProduct(c.dataset.p); });
+function openProduct(id) {
+  const p = PRODUCTS.find(x => x.id === id); if (!p) return;
+  $('#pmBody').innerHTML = `<div class="pdetail"><div class="pi">${p.img ? `<img src="assets/${p.img}" alt="${esc(p.name)} pack">` : p.svg.replace('width="80" height="160"', 'width="150" height="300"')}</div>
+    <div class="pt"><span class="eyebrow">${esc(p.line)}</span><h2 id="pmTitle" style="font-size:34px">${esc(p.name)}</h2><p class="lead" style="font-size:16.5px">${esc(p.blurb)}</p>
+    <div class="sizes">${p.sizes.map(([s, pr]) => `<span>${esc(s)} <b>${esc(pr)}</b></span>`).join('')}</div>
+    <dl><dt>Inside</dt><dd>${esc(p.inside)}</dd><dt>Best for</dt><dd>${esc(p.best)}</dd></dl>
+    <div><b>How to enjoy</b><ol>${p.how.map(h => `<li>${esc(h)}</li>`).join('')}</ol></div>
+    ${p.brand === 'winter' ? `<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#/explore">Send it with a warm wish</a></div>` : ''}
+    </div></div>`;
+  openModal('#pModal');
+}
+
+/* ===================== MODALS ===================== */
+let lastFocus = null;
+function openModal(sel) { lastFocus = document.activeElement; const m = $(sel); m.hidden = false; document.body.style.overflow = 'hidden'; const x = $('[data-close]', m); x && x.focus(); }
+function closeModals(restore = true) { $$('.modal').forEach(m => m.hidden = true); if ($('#play').hidden) document.body.style.overflow = ''; if (restore && lastFocus) lastFocus.focus(); }
+$$('.modal').forEach(m => m.addEventListener('click', e => { if (e.target === m || e.target.closest('[data-close]')) { closeModals(); if (location.hash.startsWith('#/t/')) history.replaceState(null, '', '#/explore'); } }));
+document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (!$('#play').hidden) closePlay(); else closeModals(); });
+
+/* ===================== TEMPLATES ===================== */
+function sanitizeTemplate(t) {
+  const s = (v, n, d = '') => String(v ?? d).slice(0, n);
+  const out = { id: s(t.id, 40) || ('c-' + Math.random().toString(36).slice(2, 8)), name: s(t.name, 40, 'Untitled wish'), by: s(t.by, 28, 'A creator'), handle: s(t.handle, 28), occ: OCC[t.occ] ? t.occ : 'family',
+    theme: THEMES[t.theme] ? t.theme : 'kitchen', game: GAMES[t.game] ? t.game : 'stir', cup: CUPS[t.cup] ? t.cup : 'haldi', opener: s(t.opener, 220, 'This one is for you.'),
+    prompts: (Array.isArray(t.prompts) ? t.prompts : P3).slice(0, 3).map(p => s(p, 60)), created: Number(t.created) || Date.now() };
+  while (out.prompts.length < 3) out.prompts.push(P3[out.prompts.length]);
+  if (t.colors && typeof t.colors === 'object') { const c = {}; ['bg', 'bg2', 'ink', 'acc', 'btn'].forEach(k => { if (isHex(t.colors[k])) c[k] = t.colors[k]; }); if (Object.keys(c).length) out.colors = c; }
+  if (['steam', 'snow', 'sparks', 'petals', 'leaves', 'none'].includes(t.fx)) out.fx = t.fx;
+  return out;
+}
+function sanitizeWish(w) {
+  const t = sanitizeTemplate(w.t || {});
+  const s = (v, n) => String(v ?? '').slice(0, n);
+  return { t, to: s(w.to, 28) || 'you', from: s(w.from, 28), city: s(w.city, 24), mems: (Array.isArray(w.mems) ? w.mems : []).slice(0, 3).map(m => s(m, 160)).filter(Boolean) };
+}
+const pal = t => Object.assign({}, THEMES[t.theme], t.colors || {}, t.fx ? { fx: t.fx } : {});
+function allTemplates() {
+  const mine = store.get('mine', []), seen = store.get('seen', []);
+  const map = new Map(); [...STUDIO, ...seen, ...mine].forEach(t => map.set(t.id, sanitizeTemplate(t)));
+  return [...map.values()];
+}
+function saveSeen(t) { const seen = store.get('seen', []).filter(x => x.id !== t.id); seen.unshift(t); store.set('seen', seen.slice(0, 40)); }
+const stats = () => store.get('stats', {});
+function track(ev, tid) {
+  const s = stats(); s[tid] = s[tid] || { made: 0, open: 0 }; if (ev === 'made') s[tid].made++; if (ev === 'open') s[tid].open++; store.set('stats', s);
+  if (API_URL) fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event: ev, tid }) }).catch(() => {});
+}
+function coverHTML(t, big) {
+  const p = pal(t), c = CUPS[t.cup];
+  return `<div class="dec" style="background:radial-gradient(circle at 80% 15%,${p.bg2},${p.bg} 70%)"></div>
+    ${decor(p.fx, p)}
+    <svg class="cup" viewBox="0 0 64 64" aria-hidden="true" style="${big ? 'width:96px;height:96px;right:18px;top:24px' : ''}"><path d="M12 26h34v14a17 17 0 0 1-34 0z" fill="#fff"/><path d="M46 30a7 7 0 0 1 0 14" stroke="#fff" stroke-width="4" fill="none"/><ellipse cx="29" cy="26" rx="17" ry="4" fill="${c.color}"/><path d="M22 20q-3-5 0-10M29 20q-3-5 0-10M36 20q-3-5 0-10" stroke="${p.ink}" stroke-opacity=".5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+    <div style="position:relative;z-index:1;color:${p.ink}"><div class="ttl" style="font-size:${big ? 40 : 30}px">${esc(t.name)}</div>${big ? `<div class="sub">${esc(GAMES[t.game][0])}, ${esc(c.name)}</div>` : ''}</div>`;
+}
+function decor(fx, p) {
+  const n = 14, r = i => ((i * 9301 + 49297) % 233280) / 233280;
+  let out = '<svg class="dec" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">';
+  for (let i = 0; i < n; i++) {
+    const x = r(i) * 100, y = r(i + 7) * 70, s = 1 + r(i + 3) * 2;
+    if (fx === 'snow') out += `<circle cx="${x}" cy="${y}" r="${s * .6}" fill="#fff" opacity=".9"/>`;
+    else if (fx === 'sparks') out += `<circle cx="${x}" cy="${y}" r="${s * .5}" fill="${p.acc}" opacity=".85"/>`;
+    else if (fx === 'petals') out += `<ellipse cx="${x}" cy="${y}" rx="${s}" ry="${s * .55}" fill="${p.acc}" opacity=".35" transform="rotate(${r(i) * 180} ${x} ${y})"/>`;
+    else if (fx === 'leaves') out += `<ellipse cx="${x}" cy="${y}" rx="${s * 1.2}" ry="${s * .5}" fill="${p.acc}" opacity=".3" transform="rotate(${r(i) * 180} ${x} ${y})"/>`;
+    else if (fx === 'steam' && i < 5) out += `<path d="M${x} ${40 + y * .3} q-3 -6 0 -12 q3 -6 0 -12" stroke="${p.ink}" stroke-opacity=".12" stroke-width="1.4" fill="none"/>`;
+  }
+  return out + '</svg>';
+}
+
+/* ===================== EXPLORE ===================== */
+let occFilter = 'all';
+function renderExplore() {
+  $('#occChips').innerHTML = [['all', 'All'], ...Object.entries(OCC)].map(([k, l]) => `<button class="chip" data-k="${k}" aria-pressed="${occFilter === k}">${l}</button>`).join('');
+  const q = $('#tSearch').value.trim().toLowerCase(), likes = store.get('likes', {}), st = stats();
+  let list = allTemplates().filter(t => (occFilter === 'all' || t.occ === occFilter) && (!q || (t.name + ' ' + t.by + ' ' + t.handle).toLowerCase().includes(q)));
+  const score = t => (likes[t.id] ? 1 : 0) * 3 + ((st[t.id] || {}).made || 0) * 2 + ((st[t.id] || {}).open || 0);
+  list.sort($('#tSort').value === 'new' ? (a, b) => b.created - a.created : (a, b) => score(b) - score(a) || b.created - a.created);
+  $('#tgrid').innerHTML = list.map(t => `<article class="tcard">
+      <div class="scene">${coverHTML(t)}</div>
+      <div class="body">
+        <div class="row"><span class="tag">${esc(OCC[t.occ])}</span><span class="tag green">${esc(GAMES[t.game][0])}</span>
+          <button class="like" data-like="${esc(t.id)}" aria-pressed="${!!likes[t.id]}" aria-label="Love ${esc(t.name)}"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7.1 4.5c2.1 0 3.6 1.1 4.9 2.8 1.3-1.7 2.8-2.8 4.9-2.8 3.7 0 6.1 3.7 4.6 7.3C19.5 16.4 12 21 12 21z" fill="currentColor"/></svg>${likes[t.id] ? 'Loved' : 'Love'}</button></div>
+        <div class="by">by <b>${esc(t.by)}</b>${t.handle ? ' ' + esc(t.handle) : ''}</div>
+        <div class="actions"><button class="btn sm" data-make="${esc(t.id)}">Make it yours</button><button class="btn ghost sm" data-try="${esc(t.id)}">Try it</button></div>
+      </div></article>`).join('');
+  $('#tEmpty').hidden = list.length > 0;
+  const all = allTemplates(); const ranked = all.map(t => ({ t, u: ((st[t.id] || {}).made || 0) })).sort((a, b) => b.u - a.u || b.t.created - a.t.created).slice(0, 6);
+  $('#board').innerHTML = ranked.map(({ t, u }, i) => `<div class="r"><span class="n">${i + 1}</span><span><b>${esc(t.name)}</b><small>by ${esc(t.by)}</small></span><b class="v">${u ? u + (u === 1 ? ' wish' : ' wishes') : '<span class="tag green">New</span>'}</b></div>`).join('');
+  const wall = store.get('wall', []);
+  $('#wall').innerHTML = wall.slice(0, 12).map((n, i) => `<div class="note-card" style="--rot:${(i % 5) - 2}deg"><p>${esc(n.m)}</p><small>for ${esc(n.to)}${n.city ? ', ' + esc(n.city) : ''}</small></div>`).join('');
+  $('#wallEmpty').hidden = wall.length > 0;
+}
+$('#occChips').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; occFilter = b.dataset.k; renderExplore(); });
+$('#tSearch').addEventListener('input', renderExplore);
+$('#tSort').addEventListener('change', renderExplore);
+$('#tgrid').addEventListener('click', e => {
+  const l = e.target.closest('[data-like]'), m = e.target.closest('[data-make]'), t = e.target.closest('[data-try]');
+  const find = id => allTemplates().find(x => x.id === id);
+  if (l) { const likes = store.get('likes', {}); likes[l.dataset.like] = !likes[l.dataset.like]; store.set('likes', likes); renderExplore(); }
+  if (m) personalise(find(m.dataset.make));
+  if (t) { const tp = find(t.dataset.try); play(sampleWish(tp), true); }
+});
+function sampleWish(t) { return { t, to: 'Maa', from: 'Chintu', city: 'Lucknow', mems: ['The first winter in the hostel, when you posted a whole tin of ladoos and the warden took half', '"Topi pehno. Kaan se thand lagti hai."', 'The pressure cooker whistling right in the middle of our video call'] }; }
+
+function personalise(t) {
+  if (!t) return;
+  const p = pal(t);
+  $('#mmBody').innerHTML = `<div class="personal">
+    <form class="f form" id="pForm" novalidate>
+      <span class="eyebrow">Make it yours</span><h2 id="mmTitle" style="font-size:30px">${esc(t.name)}</h2>
+      <div class="g2"><label for="pTo">Their name<input type="text" id="pTo" maxlength="28" placeholder="Maa, Riya, Dadi..."></label><label for="pFrom">Your name<input type="text" id="pFrom" maxlength="28" placeholder="How they call you"></label></div>
+      ${t.prompts.map((pr, i) => `<label for="pm${i}">${esc(pr)}<textarea id="pm${i}" maxlength="160"></textarea></label>`).join('')}
+      <label for="pCity">Their city<input type="text" id="pCity" maxlength="24" placeholder="Lucknow"></label>
+      <label class="check"><input type="checkbox" id="pPub" checked> Add my first memory to the Winter Wall, with only their first name and city</label>
+      <p class="err" id="pErr" hidden></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn ghost" id="pPrev">Play it as them</button><button type="submit" class="btn">Create my wish link</button></div>
+      <div class="share" id="pShare" hidden>
+        <div class="link"><input type="text" id="pLink" readonly aria-label="Your wish link"><button type="button" class="btn sm" id="pCopy">Copy</button></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn saffron sm" id="pWa" target="_blank" rel="noopener">Send on WhatsApp</a><button type="button" class="btn ghost sm" id="pNative" hidden>Share</button></div>
+        <div class="qr" id="pQr" aria-label="QR code for your wish"></div>
+      </div>
+    </form>
+    <div class="side"><div class="mini" style="color:${p.ink}">${coverHTML(t, true)}</div>
+      <p class="muted" style="margin-top:12px;font-size:14px">by <b>${esc(t.by)}</b>${t.handle ? ' ' + esc(t.handle) : ''}. They play <b>${esc(GAMES[t.game][0].toLowerCase())}</b>, then the letter opens.</p></div>
+  </div>`;
+  openModal('#mModal');
+  const read = () => ({ t, to: $('#pTo').value.trim() || 'you', from: $('#pFrom').value.trim(), city: $('#pCity').value.trim(), mems: [0, 1, 2].map(i => $('#pm' + i).value.trim()).filter(Boolean) });
+  $('#pPrev').onclick = () => { const w = read(); if (!w.mems.length) w.mems = sampleWish(t).mems; play(w, true); };
+  $('#pForm').onsubmit = e => {
+    e.preventDefault(); const w = read();
+    if (!w.mems.length) { $('#pErr').textContent = 'Add at least one memory. That is what makes it feel like yours.'; $('#pErr').hidden = false; $('#pm0').focus(); return; }
+    $('#pErr').hidden = true;
+    const link = baseUrl() + '#/w/' + b64e(w);
+    track('made', t.id);
+    if ($('#pPub').checked) { const wall = store.get('wall', []); wall.unshift({ m: w.mems[0], to: w.to.split(' ')[0], city: w.city }); store.set('wall', wall.slice(0, 30)); }
+    $('#pShare').hidden = false; $('#pLink').value = link;
+    const msg = `${w.to}, I made you something warm. Open it: ${link}`;
+    $('#pWa').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    if (navigator.share) { $('#pNative').hidden = false; $('#pNative').onclick = () => navigator.share({ title: 'Ek Garam Wish', text: msg, url: link }).catch(() => {}); }
+    $('#pCopy').onclick = () => copy(link, $('#pLink'));
+    qr($('#pQr'), link); toast('Your wish is ready');
+  };
+}
+function qr(el, text) { el.innerHTML = ''; if (!window.QRCode) { el.hidden = true; return; } try { new QRCode(el, { text, width: 300, height: 300, colorDark: '#2B1220', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.L }); el.hidden = false; } catch { el.hidden = true; } }
+
+/* ===================== CREATORS ===================== */
+const TIERS = [[10, 'Warm creator', 'Badge on your experiences'], [100, 'Featured', 'Your experience pinned on Explore'], [500, 'Trio hamper', 'A Winter Sips Trio hamper at your door'], [1000, 'Rasmitra collab', 'A paid winter campaign with us']];
+let draft = store.get('draft', null) || { name: '', by: '', handle: '', occ: 'family', theme: 'kitchen', game: 'stir', cup: 'haldi', opener: '', prompts: P3.slice() };
+function renderStudio() {
+  const mine = store.get('mine', []), st = stats(); const total = mine.reduce((a, t) => a + ((st[t.id] || {}).made || 0), 0);
+  $('#tiers').innerHTML = `<p class="muted" style="font-weight:700">Your cups so far: <b style="color:var(--ink);font-family:var(--display);font-size:22px">${total}</b></p>` + TIERS.map(([n, a, b]) => `<div class="tier ${total >= n ? 'on' : ''}"><span class="cups">${n.toLocaleString('en-IN')}</span><span><b>${a}</b><small>${b}</small></span><span class="tag ${total >= n ? 'green' : ''}">${total >= n ? 'Unlocked' : 'cups'}</span></div>`).join('');
+  $('#sOcc').innerHTML = Object.entries(OCC).map(([k, l]) => `<option value="${k}">${l}</option>`).join('');
+  $('#sName').value = draft.name; $('#sBy').value = draft.by; $('#sHandle').value = draft.handle; $('#sOcc').value = draft.occ; $('#sOpener').value = draft.opener;
+  ['sP1', 'sP2', 'sP3'].forEach((id, i) => $('#' + id).value = draft.prompts[i] || '');
+  renderOpts(); syncCode(); renderMine();
+}
+function renderOpts() {
+  $('#sThemes').innerHTML = Object.entries(THEMES).map(([k, t]) => `<button type="button" class="opt" data-k="${k}" aria-pressed="${draft.theme === k}"><div class="swatch" style="background:linear-gradient(120deg,${t.bg},${t.bg2} 70%,${t.acc})"></div><b>${t.name}</b><small>${t.fx} effect</small></button>`).join('');
+  $('#sGames').innerHTML = Object.entries(GAMES).map(([k, [n, d]]) => `<button type="button" class="opt" data-k="${k}" aria-pressed="${draft.game === k}"><b>${n}</b><small>${d}</small></button>`).join('');
+  $('#sCups').innerHTML = Object.entries(CUPS).map(([k, c]) => `<button type="button" class="opt" data-k="${k}" aria-pressed="${draft.cup === k}"><div class="swatch" style="background:${c.color};width:34px;border-radius:50%"></div><b>${c.name}</b></button>`).join('');
+  preview();
+}
+function readDraft() {
+  draft.name = $('#sName').value.trim(); draft.by = $('#sBy').value.trim(); draft.handle = $('#sHandle').value.trim(); draft.occ = $('#sOcc').value; draft.opener = $('#sOpener').value.trim();
+  draft.prompts = ['sP1', 'sP2', 'sP3'].map((id, i) => $('#' + id).value.trim() || P3[i]); store.set('draft', draft);
+}
+const draftTemplate = () => sanitizeTemplate({ ...draft, id: draft.id || 'c-' + Math.random().toString(36).slice(2, 9), name: draft.name || 'Untitled wish', by: draft.by || 'You', opener: draft.opener || 'This one is for you.', created: Date.now() });
+function preview() { const t = draftTemplate(); $('#sPreview').style.color = pal(t).ink; $('#sPreview').innerHTML = coverHTML(t, true); }
+function syncCode() { const t = draftTemplate(); const { id, created, ...rest } = t; $('#sCode').value = JSON.stringify({ ...rest, colors: { ...THEMES[t.theme], ...(draft.colors || {}) }, fx: draft.fx || THEMES[t.theme].fx }, (k, v) => k === 'name' && typeof v === 'string' && THEMES[v] ? undefined : v, 2).replace(/"name": "(Kitchen morning|Snowy terrace|Diya night|Rose garden|Mango summer)",\n\s*/g, ''); }
+['sName', 'sBy', 'sHandle', 'sOpener', 'sP1', 'sP2', 'sP3'].forEach(id => $('#' + id).addEventListener('input', () => { readDraft(); preview(); }));
+$('#sOcc').addEventListener('change', () => { readDraft(); syncCode(); });
+[['#sThemes', 'theme'], ['#sGames', 'game'], ['#sCups', 'cup']].forEach(([sel, key]) => $(sel).addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; draft[key] = b.dataset.k; if (key === 'theme') { delete draft.colors; delete draft.fx; } store.set('draft', draft); renderOpts(); syncCode(); }));
+$('#applyCode').addEventListener('click', () => {
+  try {
+    const raw = JSON.parse($('#sCode').value); const t = sanitizeTemplate(raw);
+    Object.assign(draft, { name: t.name, by: t.by, handle: t.handle, occ: t.occ, theme: t.theme, game: t.game, cup: t.cup, opener: t.opener, prompts: t.prompts });
+    draft.colors = t.colors; draft.fx = t.fx; store.set('draft', draft);
+    $('#codeMsg').className = 'ok'; $('#codeMsg').textContent = 'Applied.'; renderStudio();
+  } catch (err) { $('#codeMsg').className = 'err'; $('#codeMsg').textContent = 'That is not valid JSON. Check commas and quotes.'; }
+});
+$('#testPlay').addEventListener('click', () => { readDraft(); play(sampleWish(draftTemplate()), true); });
+$('#publish').addEventListener('click', () => {
+  readDraft();
+  if (!draft.name || !draft.by) { toast('Give it a name and add your name first.'); (draft.name ? $('#sBy') : $('#sName')).focus(); return; }
+  const t = draftTemplate(); t.id = 'c-' + Math.random().toString(36).slice(2, 9);
+  const mine = store.get('mine', []); mine.unshift(t); store.set('mine', mine);
+  const link = baseUrl() + '#/t/' + b64e(t);
+  $('#pubBox').hidden = false; $('#pubLink').value = link; $('#pubOpen').href = '#/t/' + b64e(t);
+  $('#pubWa').href = 'https://wa.me/?text=' + encodeURIComponent(`I made a warm wish experience for Rasmitra Winter Sips. Make it yours: ${link}`);
+  $('#pubCopy').onclick = () => copy(link, $('#pubLink'));
+  qr($('#pubQr'), link); renderMine(); toast('Published'); $('#pubBox').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+});
+function renderMine() {
+  const mine = store.get('mine', []), st = stats();
+  $('#mine').innerHTML = mine.map(t => { const p = pal(t), s = st[t.id] || { made: 0, open: 0 };
+    return `<div class="m"><div class="sw" style="background:linear-gradient(140deg,${p.bg},${p.bg2} 70%,${p.acc})"></div>
+      <div><b>${esc(t.name)}</b><div class="stats">${esc(OCC[t.occ])}, ${esc(GAMES[t.game][0].toLowerCase())}. <b>${s.made}</b> wishes made, <b>${s.open}</b> opened here</div></div>
+      <div class="act"><button class="btn ghost sm" data-copy="${esc(t.id)}">Copy link</button><button class="btn ghost sm" data-del="${esc(t.id)}">Remove</button></div></div>`; }).join('');
+  $('#mineEmpty').hidden = mine.length > 0;
+}
+$('#mine').addEventListener('click', e => {
+  const c = e.target.closest('[data-copy]'), d = e.target.closest('[data-del]');
+  const mine = store.get('mine', []);
+  if (c) { const t = mine.find(x => x.id === c.dataset.copy); if (t) copy(baseUrl() + '#/t/' + b64e(t)); }
+  if (d) { const btn = d; if (btn.dataset.sure) { store.set('mine', mine.filter(x => x.id !== d.dataset.del)); renderStudio(); } else { btn.dataset.sure = '1'; btn.textContent = 'Tap again to remove'; setTimeout(() => { if (btn.isConnected) { delete btn.dataset.sure; btn.textContent = 'Remove'; } }, 3000); } }
+});
+
+/* ===================== PLAY ===================== */
+const playEl = $('#play'), stage = $('#stage');
+let cleanup = [], fxStop = null;
+function stopFx() { if (fxStop) { fxStop(); fxStop = null; } cleanup.forEach(f => f()); cleanup = []; }
+function closePlay() { playEl.hidden = true; document.body.style.overflow = ''; stopFx(); if (location.hash.startsWith('#/w/')) history.replaceState(null, '', '#/explore'); }
+$('#playClose').addEventListener('click', closePlay);
+function fx(kind, p) {
+  const c = $('#fx'), x = c.getContext('2d'); let raf, items = [];
+  const fit = () => { c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio; }; fit(); addEventListener('resize', fit);
+  for (let i = 0; i < 60; i++) items.push({ x: Math.random(), y: Math.random(), r: 1 + Math.random() * 2.6, s: .0005 + Math.random() * .0012, d: Math.random() * 6, a: Math.random() * 6 });
+  const col = kind === 'snow' ? 'rgba(255,255,255,.9)' : kind === 'steam' ? 'rgba(255,255,255,.55)' : p.acc;
+  const tick = t => {
+    x.clearRect(0, 0, c.width, c.height); x.fillStyle = col; x.globalAlpha = kind === 'sparks' ? .8 : kind === 'petals' || kind === 'leaves' ? .45 : 1;
+    items.forEach(f => { f.y += kind === 'sparks' || kind === 'steam' ? -f.s : f.s; if (f.y > 1.02) f.y = -.02; if (f.y < -.02) f.y = 1.02;
+      const px = (f.x + Math.sin(t / 2200 + f.d) * .012) * c.width, py = f.y * c.height, r = f.r * devicePixelRatio;
+      x.beginPath(); if (kind === 'petals' || kind === 'leaves') x.ellipse(px, py, r * 2.2, r, f.a + t / 3000, 0, 7); else x.arc(px, py, r, 0, 7); x.fill(); });
+    raf = requestAnimationFrame(tick);
+  };
+  if (!reduce && kind !== 'none') raf = requestAnimationFrame(tick);
+  return () => { cancelAnimationFrame(raf); removeEventListener('resize', fit); x.clearRect(0, 0, c.width, c.height); };
+}
+function play(w, isPreview) {
+  closeModals(false); stopFx();
+  const p = pal(w.t), d = CUPS[w.t.cup];
+  playEl.style.setProperty('--pbg', `radial-gradient(circle at 50% 30%,${p.bg2},${p.bg} 70%)`);
+  playEl.style.setProperty('--pink', p.ink); playEl.style.setProperty('--pacc', p.acc); playEl.style.setProperty('--pbtn', p.btn);
+  playEl.hidden = false; document.body.style.overflow = 'hidden'; fxStop = fx(p.fx, p);
+  stage.innerHTML = `<p class="eyebrow" style="color:${p.acc}">A warm wish for</p><div class="big">${esc(w.to)}</div>
+    <p class="sub">${w.from ? esc(w.from) + ' made you a cup of ' : 'Someone made you a cup of '}<b>${d.name}</b>. Win it to read what they wrote.</p>
+    <button class="btn" id="go">Start</button>`;
+  $('#go').focus();
+  $('#go').onclick = () => ({ stir: gStir, catch: gCatch, match: gMatch, blow: gBlow }[w.t.game] || gStir)(w, d, p, () => reveal(w, d, p, isPreview));
+}
+function skipBtn(done) { const b = document.createElement('button'); b.className = 'btn ghost sm'; b.textContent = 'Skip the game'; b.onclick = done; stage.appendChild(b); }
+function gStir(w, d, p, done) {
+  stage.innerHTML = `<div class="big" style="font-size:32px">Stir the cup</div><p class="sub">Drag in circles around the cup until it turns golden.</p>
+    <svg class="stir" viewBox="0 0 200 200" id="stirSvg" role="img" aria-label="Cup seen from above"><circle cx="100" cy="100" r="92" fill="#fff"/><circle cx="100" cy="100" r="80" fill="${d.milk}"/><circle cx="100" cy="100" r="80" id="gold" fill="${d.color}" opacity="0"/>
+    <path id="swirl" d="M100 40 A60 60 0 1 1 99.9 40" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="5" stroke-dasharray="20 18" style="transform-origin:100px 100px"/><circle id="spoon" cx="100" cy="40" r="11" fill="#B9B2AA" stroke="#fff" stroke-width="3"/></svg>
+    <div class="prog" aria-hidden="true"><i id="sp"></i></div>`;
+  skipBtn(done);
+  const svg = $('#stirSvg'); let last = null, total = 0, fin = false; const need = Math.PI * 6;
+  const ang = e => { const r = svg.getBoundingClientRect(); return Math.atan2(e.clientY - (r.top + r.height / 2), e.clientX - (r.left + r.width / 2)); };
+  svg.addEventListener('pointerdown', e => { svg.setPointerCapture(e.pointerId); last = ang(e); });
+  svg.addEventListener('pointermove', e => { if (last === null || fin) return; const a = ang(e); let da = a - last; if (da > Math.PI) da -= 2 * Math.PI; if (da < -Math.PI) da += 2 * Math.PI; total += Math.abs(da); last = a;
+    const q = Math.min(1, total / need); $('#sp').style.width = q * 100 + '%'; $('#gold').setAttribute('opacity', q); $('#spoon').setAttribute('cx', 100 + 60 * Math.cos(a)); $('#spoon').setAttribute('cy', 100 + 60 * Math.sin(a)); $('#swirl').style.transform = `rotate(${total * 30}deg)`;
+    if (q >= 1) { fin = true; setTimeout(done, 450); } });
+  svg.addEventListener('pointerup', () => last = null);
+}
+function gCatch(w, d, p, done) {
+  stage.innerHTML = `<div class="big" style="font-size:32px">Catch the masala</div><p class="sub">Move the cup. Catch <b id="left">5</b> more ingredients.</p><canvas class="catch" id="cv" width="360" height="400"></canvas>`;
+  skipBtn(() => { cancelAnimationFrame(raf); done(); });
+  const c = $('#cv'), x = c.getContext('2d'); let cup = 180, items = [], got = 0, raf, last = 0, over = false;
+  const set = e => { const r = c.getBoundingClientRect(); cup = Math.max(44, Math.min(316, (e.clientX - r.left) / r.width * 360)); };
+  c.addEventListener('pointermove', set); c.addEventListener('pointerdown', e => { c.setPointerCapture(e.pointerId); set(e); });
+  const tick = t => {
+    if (t - last > 900) { items.push({ x: 30 + Math.random() * 300, y: -20, v: 1.4 + Math.random() * 1.3, t: d.bits[Math.floor(Math.random() * d.bits.length)] }); last = t; }
+    x.clearRect(0, 0, 360, 400);
+    items.forEach(it => { it.y += it.v; x.fillStyle = p.acc; x.beginPath(); x.arc(it.x, it.y, 16, 0, 7); x.fill(); x.fillStyle = p.ink; x.font = '800 13px Mulish, sans-serif'; x.textAlign = 'center'; x.fillText(it.t, it.x, it.y + 32); });
+    items = items.filter(it => { if (it.y > 330 && it.y < 365 && Math.abs(it.x - cup) < 46) { got++; $('#left').textContent = Math.max(0, 5 - got); return false; } return it.y < 420; });
+    x.fillStyle = '#fff'; x.beginPath(); x.moveTo(cup - 44, 340); x.lineTo(cup + 44, 340); x.lineTo(cup + 34, 388); x.lineTo(cup - 34, 388); x.closePath(); x.fill();
+    x.fillStyle = d.color; x.fillRect(cup - 40, 342, 80, 8);
+    if (got >= 5 && !over) { over = true; setTimeout(done, 300); return; }
+    raf = requestAnimationFrame(tick);
+  };
+  raf = requestAnimationFrame(tick); cleanup.push(() => cancelAnimationFrame(raf));
+}
+function gMatch(w, d, p, done) {
+  const names = d.bits.slice(0, 3), deck = [...names, ...names].sort(() => Math.random() - .5);
+  stage.innerHTML = `<div class="big" style="font-size:32px">Memory match</div><p class="sub">Flip two cards at a time and pair all three ingredients.</p>
+    <div class="cards" id="cards">${deck.map((n, i) => `<button class="mcard" data-i="${i}" aria-label="Hidden card"><span class="face back"></span><span class="face front">${n}</span></button>`).join('')}</div>`;
+  skipBtn(done);
+  let open = [], matched = 0, lock = false;
+  $('#cards').addEventListener('click', e => { const b = e.target.closest('.mcard'); if (!b || lock || b.classList.contains('up')) return;
+    b.classList.add('up'); b.setAttribute('aria-label', deck[b.dataset.i]); open.push(b);
+    if (open.length === 2) { lock = true; const [a, c] = open;
+      if (deck[a.dataset.i] === deck[c.dataset.i]) { a.classList.add('done'); c.classList.add('done'); matched++; open = []; lock = false; if (matched === 3) setTimeout(done, 500); }
+      else setTimeout(() => { [a, c].forEach(x => { x.classList.remove('up'); x.setAttribute('aria-label', 'Hidden card'); }); open = []; lock = false; }, 750); } });
+}
+function gBlow(w, d, p, done) {
+  stage.innerHTML = `<div class="big" style="font-size:32px">Blow on the cup</div><p class="sub">Tap the button to blow the steam off the note.</p>
+    <div class="blowbox"><p>${esc(w.to)}, this one is too hot to read just yet...</p><div class="steam" id="steam"></div></div><button class="btn" id="blow">Blow</button>`;
+  skipBtn(done); let n = 0; $('#blow').focus();
+  $('#blow').onclick = () => { n++; $('#steam').style.opacity = Math.max(0, 1 - n / 8); if (n >= 8) setTimeout(done, 400); };
+}
+function reveal(w, d, p, isPreview) {
+  const labels = ['Remember', 'You always say', 'And never forget'];
+  stage.innerHTML = `<div class="letter"><div class="to">Dear ${esc(w.to)},</div><div class="typed" id="typed"></div>
+      <div class="memlist" id="ml">${w.mems.map((m, i) => `<div><b>${labels[i]}</b>: ${esc(m)}</div>`).join('')}</div>
+      <div class="from">${w.from ? 'Love, ' + esc(w.from) : 'With love'}</div></div>
+    <button class="btn" id="toGift">Claim your cup</button>`;
+  const el = $('#typed'), txt = w.t.opener; let i = 0;
+  const memsOn = () => $$('#ml div').forEach((m, k) => setTimeout(() => m.classList.add('on'), 350 * k));
+  if (reduce) { el.textContent = txt; memsOn(); } else { const iv = setInterval(() => { el.textContent = txt.slice(0, ++i); if (i >= txt.length) { clearInterval(iv); memsOn(); } }, 26); cleanup.push(() => clearInterval(iv)); }
+  $('#toGift').onclick = () => gift(w, d, p, isPreview);
+}
+function gift(w, d, p, isPreview) {
+  const code = 'GARAM-' + (Math.abs([...w.to + w.from + w.t.id].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) | 0, 7)) % 9000 + 1000);
+  stage.innerHTML = `<div class="big" style="font-size:34px">Your cup is waiting</div>
+    <div class="giftbox">
+      <div class="ticket"><small>Free ₹10 ${d.name} sachet</small><div class="code">${isPreview ? 'GARAM-DEMO' : code}</div><small>Show this at a kirana that stocks Rasmitra${w.city ? ' in ' + esc(w.city) : ''}.</small></div>
+      <div class="trio"><img src="assets/p_ws_trio.webp" alt="Winter Sips Trio"><div><b>Send them the real thing</b><p style="font-size:14px;color:#5A3A48">Haldi Doodh, Kadha and Badam Kesar in one box, ₹199 on quick-commerce apps.</p></div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="back">Send one back${w.from ? ' to ' + esc(w.from) : ''}</button><button class="btn ghost" id="done">${isPreview ? 'Back' : 'Close'}</button></div>
+      <p class="credit">Experience: <b>${esc(w.t.name)}</b> by ${esc(w.t.by)}${w.t.handle ? ' ' + esc(w.t.handle) : ''}. <a href="#/create">Make your own</a></p>
+    </div>`;
+  $('#done').onclick = closePlay;
+  $('#back').onclick = () => { closePlay(); personalise(w.t); setTimeout(() => { $('#pTo').value = w.from || ''; $('#pFrom').value = isPreview ? '' : w.to; }, 0); };
+}
+
+/* ===================== BOOT ===================== */
+renderHome();
+route();
+})();
+</script>
+</body>
+</html>
